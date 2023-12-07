@@ -1,0 +1,59 @@
+_target_: src.models.Spark_2D.Spark_2D
+
+cfg:
+  name: Spark_2D
+  ## Data 
+  imageDim: ${datamodule.cfg.imageDim} 
+
+  rescaleFactor: ${datamodule.cfg.rescaleFactor}
+  interRes: ${datamodule.cfg.interRes}
+  cropMode: ${datamodule.cfg.cropMode}
+  spatialDims: 2D
+  resizedEvaluation: ${datamodule.cfg.resizedEvaluation}
+
+  ## Architecture
+  dropRate: 0.2
+  unisotropic_sampling: ${datamodule.cfg.unisotropic_sampling}
+
+  mask_ratio: 0.65
+  uniform: False
+  pe: False
+  pix_norm: False
+  dense_loss: False
+  loss_l2: True
+  en_de_norm: 'bn'
+  en_de_lin: True
+  sbn: False
+  pyramid: 4
+  dp: 0
+  # decoder
+  dec_dim: 512
+  double: True
+  hea: [0,1]
+  cmid: 0
+
+  ## Training
+  lossStrategy: 'mean'
+  lr: ${datamodule.cfg.lr}
+  pretrained: False
+  modelpath: ${datamodule.cfg.modelpath}/mae_pretrain_vit_base.pth
+  # LR Scheduling
+  scheduleLR: False 
+  patienceLR: 10
+
+  # Early Stopping
+  earlyStopping: False 
+  patienceStopping: 50
+
+  ## Evaluation
+  saveOutputImages: True  
+  evalSeg: True
+
+  ## General postprocessing
+  pad: ${datamodule.cfg.pad}
+  erodeBrainmask: True
+  medianFiltering: True
+  threshold: auto # 'auto' for autothresholding, any number for manually setting
+
+
+  SimCLR_pretraining: False

@@ -1,0 +1,31 @@
+# @package _global_
+
+# to execute this experiment run:
+# python run.py experiment=example_full.yaml
+
+defaults:
+  - override /trainer: default.yaml # override trainer to null so it's not loaded from main config defaults...
+  - override /model: Spark_2D.yaml
+  - override /datamodule: IXI.yaml
+datamodule:
+  cfg:
+    rescaleFactor: 2
+    imageDim: [192,192,100]
+    mode: t2 
+model:
+  cfg: 
+    backbone: resnet50
+    loss_on_mask: True
+    mask_ratio: 0.65
+num_folds: 1
+logger:
+  wandb:
+    project: cDDPM_pretrain
+
+ckpt_path: best 
+
+trainer:
+  max_epochs: 1200
+name : MAE_2D
+seed: 3141
+test_after_training: False
