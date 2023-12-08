@@ -1,6 +1,8 @@
 # Conditioned-Diffusion-Models-UAD
-Codebase for the paper [GUIDED RECONSTRUCTION WITH CONDITIONED DIFFUSION MODELS FOR UNSUPERVISED ANOMALY DETECTION IN BRAIN MRIS](TBD).
+Codebase for the paper [Guided Reconstruction with Conditioned Diffusion Models for Unsupervised Anomaly Detection in Brain MRIs](https://arxiv.org/abs/2312.04215).
 
+**Abstract**: 
+Unsupervised anomaly detection in Brain MRIs aims to identify abnormalities as outliers from a healthy training distribution. Reconstruction-based approaches that use generative models to learn to reconstruct healthy brain anatomy are commonly used for this task. Diffusion models are an emerging class of deep generative models that show great potential regarding reconstruction fidelity. However, they face challenges in preserving intensity characteristics in the reconstructed images, limiting their performance in anomaly detection. To address this challenge, we propose to condition the denoising mechanism of diffusion models with additional information about the image to reconstruct coming from a latent representation of the noise-free input image. This conditioning enables high-fidelity reconstruction of healthy brain structures while aligning local intensity characteristics of input-reconstruction pairs. We evaluate our method's reconstruction quality, domain adaptation features and finally segmentation performance on publicly available data sets with various pathologies. Using our proposed conditioning mechanism we can reduce the false-positive predictions and enable a more precise delineation of anomalies which significantly enhances the anomaly detection performance compared to established state-of-the-art approaches to unsupervised anomaly detection in brain MRI. Furthermore, our approach shows promise in domain adaptation across different MRI acquisitions and simulated contrasts, a crucial property of general anomaly detection methods.
 ## Model Architecture
 
 ![Model Architecture](cDDPM_Model.png)
@@ -139,9 +141,14 @@ Having pretrained the encoder, you can now run
 The <path_to_pretrained_encoder> will be placed in the <LOG_DIR>. Alternatively, you will find the best checkpoint path printed in the terminal. 
 
 ## Citation
-If you make use of our work, we would be happy if you cite it via
+If you make use of our work, you can cite it via
 
-        TBD
+    @article{Behrendt.2023,
+      title={Guided Reconstruction with Conditioned Diffusion Models for Unsupervised Anomaly Detection in Brain MRIs},
+      author={Behrendt, Finn and Bhattacharya, Debayan and Mieling, Robin and Maack, Lennart and Kr{\"u}ger, Julia and Opfer, Roland and Schlaefer, Alexander},
+      journal={arXiv preprint arXiv:2312.04215},
+      year={2023}
+      }
 
   
 
