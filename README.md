@@ -1,5 +1,5 @@
 # Conditioned-Diffusion-Models-UAD
-Codebase for the paper [Guided Reconstruction with Conditioned Diffusion Models for Unsupervised Anomaly Detection in Brain MRIs](https://arxiv.org/abs/2312.04215).
+Codebase for the paper [Guided Reconstruction with Conditioned Diffusion Models for Unsupervised Anomaly Detection in Brain MRIs](https://www.sciencedirect.com/science/article/pii/S0010482525000101).
 
 **Abstract**: 
 Unsupervised anomaly detection in Brain MRIs aims to identify abnormalities as outliers from a healthy training distribution. Reconstruction-based approaches that use generative models to learn to reconstruct healthy brain anatomy are commonly used for this task. Diffusion models are an emerging class of deep generative models that show great potential regarding reconstruction fidelity. However, they face challenges in preserving intensity characteristics in the reconstructed images, limiting their performance in anomaly detection. To address this challenge, we propose to condition the denoising mechanism of diffusion models with additional information about the image to reconstruct coming from a latent representation of the noise-free input image. This conditioning enables high-fidelity reconstruction of healthy brain structures while aligning local intensity characteristics of input-reconstruction pairs. We evaluate our method's reconstruction quality, domain adaptation features and finally segmentation performance on publicly available data sets with various pathologies. Using our proposed conditioning mechanism we can reduce the false-positive predictions and enable a more precise delineation of anomalies which significantly enhances the anomaly detection performance compared to established state-of-the-art approaches to unsupervised anomaly detection in brain MRI. Furthermore, our approach shows promise in domain adaptation across different MRI acquisitions and simulated contrasts, a crucial property of general anomaly detection methods.
@@ -95,12 +95,22 @@ The <path_to_pretrained_encoder> will be placed in the <LOG_DIR>. Alternatively,
 ## Citation
 If you make use of our work, you can cite it via
 
-    @article{Behrendt.2023,
-      title={Guided Reconstruction with Conditioned Diffusion Models for Unsupervised Anomaly Detection in Brain MRIs},
-      author={Behrendt, Finn and Bhattacharya, Debayan and Mieling, Robin and Maack, Lennart and Kr{\"u}ger, Julia and Opfer, Roland and Schlaefer, Alexander},
-      journal={arXiv preprint arXiv:2312.04215},
-      year={2023}
-      }
+    
+    @article{BEHRENDT2025109660,
+    abstract = {The application of supervised models to clinical screening tasks is challenging due to the need for annotated data for each considered pathology. Unsupervised Anomaly Detection (UAD) is an alternative approach that aims to identify any anomaly as an outlier from a healthy training distribution. A prevalent strategy for UAD in brain MRI involves using generative models to learn the reconstruction of healthy brain anatomy for a given input image. As these models should fail to reconstruct unhealthy structures, the reconstruction errors indicate anomalies. However, a significant challenge is to balance the accurate reconstruction of healthy anatomy and the undesired replication of abnormal structures. While diffusion models have shown promising results with detailed and accurate reconstructions, they face challenges in preserving intensity characteristics, resulting in false positives. We propose conditioning the denoising process of diffusion models with additional information derived from a latent representation of the input image. We demonstrate that this conditioning allows for accurate and local adaptation to the general input intensity distribution while avoiding the replication of unhealthy structures. We compare the novel approach to different state-of-the-art methods and for different data sets. Our results show substantial improvements in the segmentation performance, with the Dice score improved by 11.9%, 20.0%, and 44.6%, for the BraTS, ATLAS and MSLUB data sets, respectively, while maintaining competitive performance on the WMH data set. Furthermore, our results indicate effective domain adaptation across different MRI acquisitions and simulated contrasts, an important attribute for general anomaly detection methods. The code for our work is available at https://github.com/FinnBehrendt/Conditioned-Diffusion-Models-UAD.},
+	author = {Finn Behrendt and Debayan Bhattacharya and Robin Mieling and Lennart Maack and Julia Kr{\"u}ger and Roland Opfer and Alexander Schlaefer},
+	doi = {https://doi.org/10.1016/j.compbiomed.2025.109660},
+	issn = {0010-4825},
+	journal = {Computers in Biology and Medicine},
+	keywords = {Unsupervised anomaly detection, Segmentation, Brain MRI, Diffusion models},
+	pages = {109660},
+	title = {Guided reconstruction with conditioned diffusion models for unsupervised anomaly detection in brain MRIs},
+	url = {https://www.sciencedirect.com/science/article/pii/S0010482525000101},
+	volume = {186},
+	year = {2025},
+	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S0010482525000101},
+	bdsk-url-2 = {https://doi.org/10.1016/j.compbiomed.2025.109660}}
+
 
   
 
